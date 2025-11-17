@@ -9,10 +9,10 @@ const ListaKomponens = ({ elemek }) => (
   </ol>
 );
 export const App = () => {
-  const [adatok, setAdatok] = useState({});
+  const [adatok, setAdatok] = useState([]);
 
   useEffect(() => {
-    fetch('/api/users')
+    fetch('https://itmp.sulla.hu/users')
     .then((res) => (res.ok? res.json() : []))
     .then((tartalom) => setAdatok(tartalom));
   }, [])
